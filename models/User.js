@@ -17,11 +17,11 @@ User.init(
       autoIncrement: true,
     },
     first_name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     last_name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     mail: {
@@ -40,7 +40,7 @@ User.init(
       },
     },
     license: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     license_number: {

@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require("sequelize");
-const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
 class Aircraft extends Model {}
@@ -11,8 +10,8 @@ Aircraft.init({
     primaryKey: true,
     autoIncrement: true,
   },
-  first_name: {
-    type: DataTypes.INTEGER,
+  aircraft_name: {
+    type: DataTypes.STRING,
     allowNull: false,
   },
   sequelize,
