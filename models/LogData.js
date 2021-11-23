@@ -21,8 +21,8 @@ LogData.init({
       key: "id",
     },
   },
-  aircraft_type: {
-    type: DataTypes.INTEGER,
+  aircraft_id: {
+    type: DataTypes.STRING,
     references: {
       model: "aircraft",
       key: "id",
