@@ -22,20 +22,21 @@ LogData.init({
     },
   },
   aircraft_id: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     references: {
       model: "aircraft",
       key: "id",
     },
-    dual: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    instructor_name: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
   },
+  dual: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+  },
+  instructor_name: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+
   departure_airport: {
     type: DataTypes.STRING,
     allowNull: false,

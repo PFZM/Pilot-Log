@@ -14,6 +14,10 @@ Aircraft.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
+  reg_id: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   sequelize,
   timestamps: false,
   freezeTableName: true,
