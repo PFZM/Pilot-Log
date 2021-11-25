@@ -10,9 +10,10 @@ LogData.init({
     primaryKey: true,
     autoIncrement: true,
   },
-  Date: {
+  date: {
     type: DataTypes.DATE,
     allowNull: false,
+    defaultValue: DataTypes.NOW,
   },
   pilot_id: {
     type: DataTypes.INTEGER,
@@ -55,7 +56,7 @@ LogData.init({
   },
   approaches: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   landings: {
     type: DataTypes.INTEGER,
@@ -73,7 +74,8 @@ LogData.init({
     type: DataTypes.TIME,
     allowNull: false,
   },
-  sequelize,
+
+sequelize,
   timestamps: false,
   freezeTableName: true,
   underscored: true,
