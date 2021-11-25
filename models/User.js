@@ -46,6 +46,7 @@ User.init(
     license_number: {
       type: DataTypes.NUMBER,
       allowNull: false,
+      unique: true,
       validate: {
         isNumeric: true,
       },
@@ -53,6 +54,7 @@ User.init(
     instrument_rating: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: false,
     },
   },
   {
