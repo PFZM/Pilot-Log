@@ -8,14 +8,14 @@ User.hasMany(LogData, {
 });
 
 LogData.belongsTo(User, {
-  foreignKey: "pilot-id",
+  foreignKey: "pilot_id",
 });
 
-LogData.hasMany(Aircraft, {
+Aircraft.hasMany(LogData, {
   foreignKey: "aircraft_id",
 });
 
-Aircraft.belongsTo(LogData, {
+LogData.belongsTo(Aircraft, {
   foreignKey: "aircraft_id",
 });
 

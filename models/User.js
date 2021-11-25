@@ -44,7 +44,7 @@ User.init(
       allowNull: false,
     },
     license_number: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: true,
       validate: {
