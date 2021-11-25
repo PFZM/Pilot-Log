@@ -14,9 +14,14 @@ Aircraft.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
+  aircraft_type: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   reg_id: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
   },
   sequelize,
   timestamps: false,
