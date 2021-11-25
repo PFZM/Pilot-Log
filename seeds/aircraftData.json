@@ -1,33 +1,32 @@
 [
-    {
-        "aircraft_name":"Cessna 172",
-        "aircraft_type":"C172",
-        "reg_id":"VH-ABC"
-    },
-    {
-        "aircraft_name":"Cessna 172",
-        "aircraft_type":"C172",
-        "reg_id":"VH-XYZ"
-    },
-    {
-        "aircraft_name":"Piper Warrior",
-        "aircraft_type":"PA28",
-        "reg_id":"VH-ZZC"
-    },
-    {
-        "aircraft_name":"Cirrus SR22",
-        "aircraft_type":"SR22",
-        "reg_id":"VH-ZDY"
-    },
-    {
-        "aircraft_name":"Cirrus SR22",
-        "aircraft_type":"SR22",
-        "reg_id":"VH-YWO"
-    },
-    {
-        "aircraft_name":"Cirrus SR22",
-        "aircraft_type":"SR22",
-        "reg_id":"VH-YWO"
-    }
-    ]
-    
+  {
+    "aircraft_name": "Cessna 172",
+    "aircraft_type": "C172",
+    "reg_id": "VH-ABC"
+  },
+  {
+    "aircraft_name": "Cessna 172",
+    "aircraft_type": "C172",
+    "reg_id": "VH-XYZ"
+  },
+  {
+    "aircraft_name": "Piper Warrior",
+    "aircraft_type": "PA28",
+    "reg_id": "VH-ZZC"
+  },
+  {
+    "aircraft_name": "Cirrus SR22",
+    "aircraft_type": "SR22",
+    "reg_id": "VH-ZDY"
+  },
+  {
+    "aircraft_name": "Cirrus SR22",
+    "aircraft_type": "SR22",
+    "reg_id": "VH-YWO"
+  },
+  {
+    "aircraft_name": "Cirrus SR22",
+    "aircraft_type": "SR22",
+    "reg_id": "VH-YWO"
+  }
+]
