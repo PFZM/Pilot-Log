@@ -7,7 +7,7 @@ router.post("/", withAuth, async (req, res) => {
   try {
     const logData = await LogData.create({
       ...req.body,
-      user_id: req.session.user_id,
+      pilot_id: req.session.user_id,
     });
     res.status(200).json(logData);
   } catch (err) {
