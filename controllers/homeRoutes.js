@@ -2,7 +2,8 @@ const router = require("express").Router();
 const { User, LogData, Aircraft } = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get("/", withAuth, async (req, res) => {
+
+router.get("/allLogData", withAuth, async (req, res) => {
   try {
     const logData = await LogData.findAll({
       include: [{ model: User , attributes: {exclude: ["password"]}}, { model: Aircraft }],
@@ -62,10 +63,10 @@ router.get("/logData/:id", withAuth, async (req, res) => {
 });
 
 
-router.get("/login", (req, res) => {
+router.get("/", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect("/allLogData");
     return;
   }
   res.render("login");

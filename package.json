@@ -9,8 +9,7 @@
     "start": "node server.js",
     "try": "nodemon",
     "seed": "node seeds/seeds.js",
-    "build:css": "postcss public/css/tailwind.css -o public/css/style.css",
-    "prod": "NODE_ENV=production postcss public/css/tailwind.css -o ./public/css/styles.css"
+    "build:css": "tailwind build -i src/style.css -o public/css/style.css"
   },
   "repository": {
     "type": "git",
