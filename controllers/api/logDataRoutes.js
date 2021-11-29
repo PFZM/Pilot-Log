@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { LogData } = require("../../models");
+const { LogData, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // Create new LogData
@@ -25,7 +25,7 @@ router.post("/", withAuth, async (req, res) => {
   try {
     const logData = await LogData.create({
       ...req.body,
-      pilot_id: req.session.user_id,
+      //pilot_id: req.session.user_id,
     });
     res.status(200).json(logData);
   } catch (err) {
@@ -55,7 +55,6 @@ router.delete("/:id", withAuth, async (req, res) => {
     const logData = await LogData.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
     if (!logData) {

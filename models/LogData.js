@@ -68,11 +68,11 @@ LogData.init(
       allowNull: true,
     },
     total_intrument_time: {
-      type: DataTypes.TIME,
+      type: DataTypes.REAL,
       allowNull: true,
     },
     total_time: {
-      type: DataTypes.TIME,
+      type: DataTypes.REAL,
       allowNull: false,
     },
   },
