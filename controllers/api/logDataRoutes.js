@@ -4,6 +4,24 @@ const withAuth = require("../../utils/auth");
 
 // Create new LogData
 router.post("/", withAuth, async (req, res) => {
+  //req.body looks like this
+  // {
+  //      "aircraft_id":"1", - From drop down list
+  //      "dual":"false", - check box
+  //      "instructor_name": "null", input box
+  //      "departure_airport": YSSY, input box
+  //      "departure_time":"08:00", formatted input box
+  //      "arrival_airport":"YMER"
+  //      "arrival_time":"11:30",
+  //      "approaches":"1",
+  //      "landings":"1",
+  //      "comments":"very noisy passengers"
+  //      "total_intrument_time": "1.5" - input box
+  //      "total_time" : "2.0" - input box
+  // }
+  //
+  //    pilot_id : req.session.user_id
+
   try {
     const logData = await LogData.create({
       ...req.body,
