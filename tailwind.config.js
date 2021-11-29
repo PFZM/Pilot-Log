@@ -1,0 +1,24 @@
+module.exports = {
+  //mode: "jit",
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {
+      backgroundImage: {
+        "plane-bg": "url('/img/plane.png')",
+        "tower-bg": "url('/img/tower.png')",
+        "bird-bg": "url('/img/bird.png')"
+      },
+      container: {
+        center: true,
+        padding: '2rem'
+      },
+    }
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
+}

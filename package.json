@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "try": "nodemon",
-    "seed": "node seeds/seeds.js"
+    "seed": "node seeds/seeds.js",
+    "build:css": "postcss public/css/tailwind.css -o public/css/style.css",
+    "prod": "NODE_ENV=production postcss public/css/tailwind.css -o ./public/css/styles.css"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,8 @@
   },
   "homepage": "https://github.com/PFZM/Pilot-Log#readme",
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.4",
+    "autoprefixer": "^10.4.0",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "date-fns": "^2.26.0",
@@ -28,6 +32,8 @@
     "express-handlebars": "^6.0.1",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
+    "postcss": "^8.4.4",
+    "postcss-cli": "^9.0.2",
     "sequelize": "^6.12.0-alpha.1",
     "tailwindcss": "^2.2.19"
   },
