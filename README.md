@@ -8,7 +8,7 @@
 
 ## Description
 
-Description of the proyect........
+Description of the project........
 
 Packages/libraries used for this application:  
 [Bcrypt](https://www.npmjs.com/package/bcrypt).  
