@@ -5,9 +5,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+
         "plane-bg-blue": "url('/img/plane.png')",
         "tower-bg-blue": "url('/img/tower.png')",
         "bird-bg-blue": "url('/img/bird.png')"
+
       },
       container: {
         center: true,
