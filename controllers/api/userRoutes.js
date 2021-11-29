@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "error" });
+    res.status(500).json({ message: "Error creating login user" });
   }
 });
 
@@ -40,17 +40,22 @@ router.post("/login", async (req, res) => {
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "error" });
+    res.status(500).json({ message: "Error finding user" });
   }
 });
 
-router.post("/logout", (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
+router.post("/logout", async (req, res) => {
+  try {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Error loging out session" });
   }
 });
 
