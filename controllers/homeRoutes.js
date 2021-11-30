@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { User, LogData, Aircraft } = require("../models");
 const withAuth = require("../utils/auth");
 
+
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const logData = await LogData.findAll({
@@ -10,6 +11,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
         { model: Aircraft },
       ],
       where: {
+
         pilot_id: req.session.user_id,
         //pilot_id: 1,
       },
@@ -66,6 +68,17 @@ router.get("/logData/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+// Route to redirect to signUp
+router.get("/signUp", async (req, res) => {
+  try {
+    res.render("signUp");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.get("/", (req, res) => {
   // If the user is already logged in, redirect the request to another route
