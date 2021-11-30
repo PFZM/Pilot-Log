@@ -1,7 +1,7 @@
 const logout  =(event) => {
     event.preventDefault();
     fetch('api/users/logout', {
-        method: "post",
+        method: "DELETE",
         headers: {"Content-Type": "application/json"}
     })
    if (Response.ok) {
