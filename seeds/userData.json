@@ -2,7 +2,7 @@
   {
     "first_name": "Pablo",
     "last_name": "Zambrano",
-    "mail": "pablo@test.com",
+    "email": "pablo@test.com",
     "password": "Password1234",
     "license": "Commercial",
     "license_number": "25467",
@@ -11,7 +11,7 @@
   {
     "first_name": "Moustafa",
     "last_name": "Hammoud",
-    "mail": "moustafa@test.com",
+    "email": "moustafa@test.com",
     "password": "Password1234",
     "license": "Commercial",
     "license_number": "25444",
@@ -20,7 +20,7 @@
   {
     "first_name": "Ahrar",
     "last_name": "Bashar",
-    "mail": "ahrar@test.com",
+    "email": "ahrar@test.com",
     "password": "Password1234",
     "license": "Private",
     "license_number": "627467",
@@ -29,7 +29,7 @@
   {
     "first_name": "Stuart",
     "last_name": "Simmons",
-    "mail": "stuart@test.com",
+    "email": "stuart@test.com",
     "password": "Password1234",
     "license": "Commercial",
     "license_number": "776749",
