@@ -4,15 +4,65 @@
                 <span class="text-3xl font-bold text-gray-800">The Captain's Log</span>
                 <div class="relative mt-4 bg-white shadow-md sm:rounded-lg text-left">
                     <div class="h-2 bg-blue-600 rounded-t-md"></div>
-                    <form id="register" class="py-6 px-8">
-                        <label class="block font-semibold">Email<label>
-                        <input type="text" placeholder="Email" id="username" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
-                        <label class="block mt-3 font-semibold">Password<label>
+                    <form id="signup" class="py-6 px-8">
+                         <label class="block font-semibold">First Name<label>
+                        <input type="text" placeholder="First Name" id="user-first-name" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
+
+                        <label class="block font-semibold py-5">Last Name<label>
+                        <input type="text" placeholder="Last Name" id="user-last-name" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
+                        
+                        <label class="block font-semibold py-5">Email<label>
+                        <input type="email" placeholder="Email" id="user-email" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
+                        
+                        
+                        <label class="block font-semibold py-5">License<label>
+                        
+                        <div class="border w-full px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">   
+                        <div>
+                        <label class = "inline-flex items-center">
+                        <input type="radio" name="license" value= "private" id="license_p"  class="form-radio">
+                        <span class="ml-2">Private</span>
+                        </label>
+                        </div>
+                        <div>
+                        <label class = "inline-flex items-center">
+                        <input type="radio" name="license" value= "commercial" id="license_c"  class="form-radio">
+                        <span class="ml-2">Commercial</span>
+                        </label>
+                        </div>
+
+                        </div> 
+                        
+
+                        <label class="block font-semibold py-5">License Number<label>
+                        <input type="number" placeholder="License Number" id="user-license-number" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
+
+                        
+                        <label class="block font-semibold py-5">Instrument Rating<label>
+                        
+                        <div class="border w-full px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">   
+                        <div>
+                        <label class = "inline-flex items-center">
+                        <input type="radio" name="instrument" value= "true"  class="form-radio">
+                        <span class="ml-2">Yes</span>
+                        </label>
+                        </div>
+                        <div>
+                        <label class = "inline-flex items-center">
+                        <input type="radio" name="instrument" value= "false"  class="form-radio">
+                        <span class="ml-2">No</span>
+                        </label>
+                        </div>
+
+                        </div> 
+                                               
+                        <label class="block mt-3 font-semibold py-5">Password<label>
                         <input type="password" placeholder="Password" id="password" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
-                        <label class="block mt-3 font-semibold">Confirm Password<label>
+                        
+                        <label class="block mt-3 font-semibold py-5">Confirm Password<label>
                         <input type="password" placeholder="Password" id="passwordConfirm" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
                         <div class="flex justify-between items-baseline">
-                        <button type="submit" id="loginButton" class="mt-4 bg-indigo-500 text-white py-2 px-6 rounded-lg">Login</button>
+                        <button type="submit" id="signUpButton" class="mt-4 bg-indigo-500 text-white py-2 px-6 rounded-lg">Sign up!</button>
                        <p class="text-sm text-gray-200">Already have an account?</p> <a href="#" class="text-sm hover:underline" ></a><br> 
                     </form>
                 </div>
@@ -21,7 +71,6 @@
     </div>
 </div>
 
-<script src= "/javascript/login.js"></script>
 
 <script src= "/javascript/signup.js"></script>
 
