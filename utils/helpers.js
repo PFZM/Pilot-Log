@@ -1,7 +1,7 @@
+const {format, parseISO} = require('date-fns');
+
 module.exports = {
-  // insert date with specific pkg
-  format_date: (date) => {
-    // Format date as MM/DD/YYYY
-    return date.toLocaleDateString();
-  },
+  formatDate: (date) => {
+      return format(date, 'do MMM yyyy')
+  }
 };
