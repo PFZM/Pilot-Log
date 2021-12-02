@@ -41,7 +41,7 @@ router.get("/addNew", withAuth, async (req, res) => {
 });
 
 // Get LogData by specific ID
-router.get("/logData/:id", withAuth, async (req, res) => {
+router.get("/logs/:id", withAuth, async (req, res) => {
   try {
     const logDataID = await LogData.findByPk(req.params.id, {
       include: [
@@ -54,11 +54,11 @@ router.get("/logData/:id", withAuth, async (req, res) => {
         },
       ],
     });
-
     const logData = logDataID.get({ plain: true });
-
-    res.render("logData", {
-      ...logData,
+    console.log("**** render edit screen")
+    console.log(logData)
+    res.render("editData", {
+      logData,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
