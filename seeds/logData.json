@@ -69,5 +69,19 @@
     "comments": "",
     "total_intrument_time": 0,
     "total_time": 2.0
+  },
+  {
+    "date": "2021-11-23",
+    "pilot_id": 4,
+    "aircraft_id": 4,
+    "dual": false,
+    "departure_airport": "YPAD",
+    "departure_time": "14:15:00",
+    "arrival_airport": "YMML",
+    "arrival_time": "16:15:00",
+    "landings": 2,
+    "comments": "",
+    "total_intrument_time": 0,
+    "total_time": 2.0
   }
 ]
