@@ -38,14 +38,14 @@ router.post("/login", async (req, res) => {
       req.session.logged_in = true;
       res.json({ user: userData, message: "You are now logged in!" });
     });
-    console.log("User ID:",req.session.user_id)
+    console.log("User ID:", req.session.user_id);
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Error finding user" });
   }
 });
 
-router.post("/logout", async (req, res) => {
+router.delete("/logout", async (req, res) => {
   try {
     if (req.session.logged_in) {
       req.session.destroy(() => {

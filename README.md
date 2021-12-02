@@ -63,10 +63,6 @@ Ahrar Bashar
 [GitHub profile](https://github.com/bashar147258)  
 [Contact Me - Email](mailto:) - missing email
 
-Moustafa Hammoud  
-[GitHub profile](https://github.com/moustafa1305)  
-[Contact Me - Email](mailto:) - missing email
-
 Pablo Zambrano  
 [GitHub profile](http://github.com/PFZM)  
 [Contact Me - Email](mailto:pfzm@hotmail.com)
