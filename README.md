@@ -1,66 +1,76 @@
-# Unit 15: Project 2
+# README - PILOT LOG
 
-## Overview
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Welcome to Project 2! This is yet another important milestone in your full-stack journey: designing and building your first full-stack web application. You and your team will design and build an app using the MVC paradigm, create your own server-side API, add user authentication, and connect to a database.
+## Link to see the deployed application:
 
-## Key Topics
+[DEPLOYED APPLICATION](https:) -- in progress
 
-The following topics will be covered in this unit:
+## Description
 
-* Full-stack applications
+Description of the proyect........
 
-* [Git branching workflow](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
+Packages/libraries used for this application:  
+[Bcrypt](https://www.npmjs.com/package/bcrypt).  
+[Connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize).  
+[date-fns](https://date-fns.org/).  
+[dotenv](https://www.npmjs.com/package/dotenv).  
+[Express](https://www.npmjs.com/package/express).  
+[Express-handlebars](https://www.npmjs.com/search?q=express%20handlebars).  
+[Express-session](https://www.npmjs.com/package/express-session).  
+[MySQL2](https://www.npmjs.com/package/mysql2).  
+[Sequilize](https://sequelize.org/).  
+[tailwindcss](https://tailwindcss.com/).
 
-* [Agile software development](https://en.wikipedia.org/wiki/Agile_software_development)
+tailwindcss
 
-* Collaborative development
+## Table of contents:
 
-## Learning Objectives
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [License](#license)
+4. [Contributing](#contributing)
+5. [Collaborators & Questions](#Collaborators/Questions)
 
-You will be employer-ready if you are able to:
+## Installation
 
-* Speak technically about a feature you implemented in your project
+1. Fork repository
+2. Clone repository to local environment.
+3. Node.js must be installed.
+4. To install all the dependencies (bcrypt, connect-session-sequelize, date-fns, dotenv, express, express-handlebars, express-session, mysql2, sequilize, tailwindcss) use the following command:
 
-* Explain and execute git branching workflow in a collaborative project
+```bash
+npm install
+```
 
-* Resolve merge conflicts
+## Usage
 
-* Explain agile software development
+In progress
 
-* Design, build and deploy a full-stack web application to Heroku
+## License
 
-* Prepare a professional presentation and repository README for your project
+This project is covered under the MIT license.
 
-## Homework
+## Contributing
 
-With your team, you’ll conceive and execute a design that solves a real-world problem. In creating your first collaborative full-stack application, you’ll combine a robust back end--with servers, databases, advanced APIs, and user authentication—-to an intuitive front end. You’ll continue to build on the agile development methodologies you’ve used throughout this course, like storing your project code in GitHub, managing your work with a project management tool, and implementing feature and bug fixes using the Git branch workflow and pull requests.
+When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+Please note we have a code of conduct, please follow it in all your interactions with the project.
+Contributions follow the [Contributor Convenant](http://contributor-covenant.org/version/1/4/).
 
-Instead of using the front end you developed for your first project, you should start from scratch. Doing so will help you reinforce your existing front-end abilities and solidify your understanding of the dynamic between the front end and back end. Also, you’ve likely improved your skills since that first project, so with a stronger foundation now you can build a better application, using all of the additional practice you’ve had in the last several weeks.
+## Collaborators/Questions
 
-## Career Connection
+Ahrar Bashar  
+[GitHub profile](https://github.com/bashar147258)  
+[Contact Me - Email](mailto:) - missing email
 
-For more information about career services, including coding milestones, demo days, technical toolkits, workshops, and additional resources, visit the [career services website](https://careernetwork.2u.com/?utm_medium=Academics&utm_source=boot_camp/).
+Moustafa Hammoud  
+[GitHub profile](https://github.com/moustafa1305)  
+[Contact Me - Email](mailto:) - missing email
 
-## Heads-Up
+Pablo Zambrano  
+[GitHub profile](http://github.com/PFZM)  
+[Contact Me - Email](mailto:pfzm@hotmail.com)
 
-In the next unit, you'll continue to work on your group projects. You'll end the week by presenting your project to your class. Once your project is complete, you'll want to update your professional materials and add your new project to your portfolio.
-
-## Resources
-
-Here are some additional resources to help solidify the topics covered in this unit.
-
-### Full-Stack Blog Posts
-
-Check out the [Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/) for additional resources, like walkthroughs, articles, and installation guides.
-
-  * 📖 [Deploy with Heroku and MySQL](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql)
-
-### General
-
-Refer to these resources for additional information about topics covered in this unit.
-
-  * 📖 [Learn Enough Git to Be Dangerous](https://www.learnenough.com/git-tutorial/getting_started)
-
----
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+Stuart Simmons  
+[GitHub profile](https://github.com/Pilot67)  
+[Contact Me - Email](mailto:developer@simmons1.net)

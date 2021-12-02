@@ -1,19 +1,23 @@
-
 <div class="p-5 m-3 text-center text-3xl">
   <h1 class=""><b>{{logs.1.user.first_name}} {{logs.1.user.last_name}}</h1>
+   <a href="/LogIn" id="logInLink" class="text-sm hover:underline float-right">Log Out</a>
 </div>
-
-//Add new button + logout
+<div>
+  <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded self-center">
+    Add New Flight
+  </button>
+</div>
+//Vix Button
 
 <div class="container flex justify-center mx-auto">
 
-  <div class="flex flex-col">
+  <div class="flex flex-col overflow-x-scroll">
 
     <div class="w-full">
 
       <div class="border-b border-gray-200 shadow">
 
-        <table class="divide-y divide-indigo-500 ">
+        <table id="logTable" class="divide-y divide-indigo-500 ">
 
           <thead class="bg-gray-50">
 
@@ -36,6 +40,7 @@
                 Aircraft Name
 
               </th>
+
               <th class="px-6 py-2 text-xs text-black font-semibold">
 
                 Aircraft Type
@@ -66,6 +71,7 @@
                 Arrival Airport (ICAO)
 
               </th>
+
               <th class="px-6 py-2 text-sm text-black font-semibold">
 
                 Total Time
@@ -77,6 +83,29 @@
                 Instument Time
 
               </th>
+
+               <th class="px-6 py-2 text-xs text-black font-semibold">
+
+                Instructor Name
+
+              </th>
+
+              <th class="px-6 py-2 text-xs text-black font-semibold">
+
+                Approaches
+
+              </th>
+              <th class="px-6 py-2 text-xs text-black font-semibold">
+
+                Landings
+
+              </th>
+               <th class="px-6 py-2 text-sm text-black font-semibold">
+
+                Dual
+
+              </th>
+
               <th class="px-6 py-2 text-xs text-black font-semibold">
 
                 Comments
@@ -116,6 +145,7 @@
                         {{log.aircraft.aircraft_name}}
                     </div>
                 </td>
+
                 <td class="px-6 py-4 text-sm text-gray-500">
                     {{log.aircraft.aircraft_type}}
                 </td>
@@ -134,16 +164,30 @@
                 <td class="px-6 py-4">
                     {{log.arrival_airport}}
                 </td>
+
                 <td class="px-6 py-4">
                     {{log.total_time}}
                 </td>
                 <td class="px-6 py-4">
                     {{log.instrument_time}}
                 </td>
-                                <td class="px-6 py-4">
+                <td class="px-6 py-4">
+                    {{log.instructor_name}}
+                </td>
+                <td class="px-6 py-4">
+                    {{log.approaches}}
+                </td>
+                <td class="px-6 py-4">
+                    {{log.landings}}
+                </td>
+                <td class="px-6 py-4">
+                <!--Dual-->
+                <input id="dualCheck" name="dualCheck" type="checkbox" class="">
+                </td>
+                <td class="px-6 py-4">
                     {{log.comments}}
                 </td>
-                <td class="px-6 py-4" data-id="{{log.id}}">
+                <td class="px-6 py-4">
 
                 <a href="#">
 
@@ -178,43 +222,26 @@
                 </a>
 
               </td>
-              <td class="px-6 py-4" data-id="{{log.id}}"> <!-- Delete Button -->
-
-                <a href="#">
+              <td class="px-6 py-4 delBtn">
 
                   <svg
-
                     xmlns="http://www.w3.org/2000/svg"
-
                     class="w-6 h-6 text-red-400"
-
                     fill="none"
-
                     viewBox="0 0 24 24"
-
                     stroke="currentColor"
-
                   >
 
                     <path
-
                       stroke-linecap="round"
-
                       stroke-linejoin="round"
-
                       stroke-width="2"
-
                       d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-
                     />
 
                   </svg>
 
-                </a>
-
               </td>
-
-
             </tr>
             {{/each}}
 
@@ -230,21 +257,5 @@
 
 </div>
 
+<script src= "/javascript/dshbrd.js"></script>
 
-
-
-
-<!--"date": "2021-11-25",
-    "pilot_id": 1,
-    "aircraft_id": 1,
-    "dual": false,
-    "departure_airport": "YMMB",
-    "departure_time": "07:00:00",
-    "arrival_airport": "YSBK",
-    "arrival_time": "09:18:00",
-    "approaches": "2",
-    "landings": 1,
-    "comments": "Smooth Ride",
-    "total_intrument_time": 1.6,
-    "total_time": 2.3 
-    -->
