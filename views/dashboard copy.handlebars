@@ -36,6 +36,7 @@
                 Aircraft Name
 
               </th>
+
               <th class="px-6 py-2 text-xs text-black font-semibold">
 
                 Aircraft Type
@@ -66,6 +67,7 @@
                 Arrival Airport (ICAO)
 
               </th>
+
               <th class="px-6 py-2 text-sm text-black font-semibold">
 
                 Total Time
@@ -77,6 +79,29 @@
                 Instument Time
 
               </th>
+
+               <th class="px-6 py-2 text-xs text-black font-semibold">
+
+                Instructor Name
+
+              </th>
+
+              <th class="px-6 py-2 text-xs text-black font-semibold">
+
+                Approaches
+
+              </th>
+              <th class="px-6 py-2 text-xs text-black font-semibold">
+
+                Landings
+
+              </th>
+               <th class="px-6 py-2 text-sm text-black font-semibold">
+
+                Dual
+
+              </th>
+
               <th class="px-6 py-2 text-xs text-black font-semibold">
 
                 Comments
@@ -104,7 +129,7 @@
             <tr class="whitespace-nowrap">
 
                 <td class="px-6 text-sm text-gray-900">
-                    {{formatDate log.date}}
+                    {{log.date}}
                 </td>
                 <td class="px-6 py-4">
                     <div class="text-sm text-gray-900">
@@ -116,6 +141,7 @@
                         {{log.aircraft.aircraft_name}}
                     </div>
                 </td>
+
                 <td class="px-6 py-4 text-sm text-gray-500">
                     {{log.aircraft.aircraft_type}}
                 </td>
@@ -134,16 +160,30 @@
                 <td class="px-6 py-4">
                     {{log.arrival_airport}}
                 </td>
+
                 <td class="px-6 py-4">
                     {{log.total_time}}
                 </td>
                 <td class="px-6 py-4">
                     {{log.instrument_time}}
                 </td>
-                                <td class="px-6 py-4">
+                <td class="px-6 py-4">
+                    {{log.instructor_name}}
+                </td>
+                <td class="px-6 py-4">
+                    {{log.approaches}}
+                </td>
+                <td class="px-6 py-4">
+                    {{log.landings}}
+                </td>
+                <td class="px-6 py-4">
+                <!--Dual-->
+                Cool Checkbox goes here
+                </td>
+                <td class="px-6 py-4">
                     {{log.comments}}
                 </td>
-                <td class="px-6 py-4" data-id="{{log.id}}">
+                <td class="px-6 py-4">
 
                 <a href="#">
 
@@ -178,7 +218,8 @@
                 </a>
 
               </td>
-              <td class="px-6 py-4" data-id="{{log.id}}"> <!-- Delete Button -->
+
+              <td class="px-6 py-4">
 
                 <a href="#">
 
@@ -213,8 +254,6 @@
                 </a>
 
               </td>
-
-
             </tr>
             {{/each}}
 
