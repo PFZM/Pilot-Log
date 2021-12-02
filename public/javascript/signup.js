@@ -15,17 +15,25 @@ const signup = async (event) => {
     .getElementById("passwordConfirm")
     .value.trim();
 
-  console.log(
-    first_name,
-    last_name,
-    email,
-    license,
-    license_number,
-    instrument_rating,
-    password
-  );
-
-  if (password === passwordConfirmed) {
+  if (
+    !first_name ||
+    !last_name ||
+    !email ||
+    !license ||
+    !license_number ||
+    !instrument_rating ||
+    !password ||
+    !passwordConfirmed
+  ) {
+    alert("Please fill all the fields");
+    return;
+  } else if (password.length < 8) {
+    alert("Password must have at least 8 characters");
+    return;
+  } else if (password !== passwordConfirmed) {
+    alert("Passwords needs to match");
+    return;
+  } else {
     const response = await fetch("/api/users", {
       method: "post",
       body: JSON.stringify({
@@ -44,9 +52,6 @@ const signup = async (event) => {
     } else {
       alert(response.statusText);
     }
-  } else {
-    alert("Passwords needs to match");
-    return;
   }
 };
 
