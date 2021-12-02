@@ -7,9 +7,9 @@
 //   document.getElementById('logTable').addEventListener('click',delBtn,false)
 
 document.getElementById("logTable").addEventListener("click", function (event) {
-  const target = event.target;
-  console.log("click triggered", target);
-  if (target.matches("td.delBtn *")) {
-    console.log("you deleted me");
+  const target = event.target.closest("td.delBtn");
+  if (target) {
+    const id = target.getAttribute("data-id")
+    console.log("you deleted me" , id, target );
   }
 });
