@@ -55,12 +55,12 @@ router.get("/logs/:id", withAuth, async (req, res) => {
       ],
     });
     const logData = logDataID.get({ plain: true });
-    console.log("**** render edit screen")
-    console.log(logData)
     res.render("editData", {
       logData,
       logged_in: req.session.logged_in,
     });
+    // console.log("**** render edit screen")
+    // console.log(logData)
   } catch (err) {
     res.status(500).json(err);
   }
