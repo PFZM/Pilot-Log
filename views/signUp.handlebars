@@ -20,7 +20,7 @@
                         <div class="border w-full px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">   
                         <div>
                         <label class = "inline-flex items-center">
-                        <input type="radio" name="license" value= "private" id="license_p"  class="form-radio">
+                        <input type="radio" name="license" value= "private" id="license_p"  class="form-radio" checked>
                         <span class="ml-2">Private</span>
                         </label>
                         </div>
@@ -43,7 +43,7 @@
                         <div class="border w-full px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">   
                         <div>
                         <label class = "inline-flex items-center">
-                        <input type="radio" name="instrument" value= "true"  class="form-radio">
+                        <input type="radio" name="instrument" value= "true"  class="form-radio" checked>
                         <span class="ml-2">Yes</span>
                         </label>
                         </div>
@@ -57,13 +57,13 @@
                         </div> 
                                                
                         <label class="block mt-3 font-semibold py-5">Password<label>
-                        <input type="password" placeholder="Password" id="password" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
+                        <input type="password" placeholder="Password - Min 8 characters" id="password" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
                         
                         <label class="block mt-3 font-semibold py-5">Confirm Password<label>
-                        <input type="password" placeholder="Password" id="passwordConfirm" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
+                        <input type="password" placeholder="Password - Min 8 characters" id="passwordConfirm" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
                         <div class="flex justify-between items-baseline">
                         <button type="submit" id="signUpButton" class="mt-4 bg-indigo-500 text-white py-2 px-6 rounded-lg">Sign up!</button>
-                       <p class="text-sm text-gray-200">Already have an account?</p> <a href="#" class="text-sm hover:underline" ></a><br> 
+                        <a href="/" class="text-sm hover:underline text-sm text-gray-500" >Already have an account?</a><br> 
                     </form>
                 </div>
             </div>
