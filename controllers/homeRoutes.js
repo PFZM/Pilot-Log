@@ -6,7 +6,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const logData = await LogData.findAll({
       include: [
-        { model: User, attributes: { exclude: ["password"] } },
+//        { model: User, attributes: { exclude: ["password"] } },
         { model: Aircraft },
       ],
       where: {
@@ -17,6 +17,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       where: {
         id: req.session.user_id,
       },
+      attributes: { exclude: ["password"] },
       raw: true,
     })
     const logs = logData.map((log) => log.get({ plain: true }));

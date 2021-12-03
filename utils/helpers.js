@@ -8,7 +8,9 @@ const calcTime = (startTime, endTime) => {
 module.exports = {
   formatDate: (date) => {
       return format(date, 'do MMM yyyy')
+  },
+  formatDate2: (date) => {
+    return format(date, 'yyyy-MM-dd')
   }
-  
-}, calcTime;
+}
 
