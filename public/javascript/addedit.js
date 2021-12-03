@@ -1,7 +1,6 @@
 //save button pressed
 document.getElementById("btnSave").addEventListener("click", async (event) => {
     event.preventDefault();
-    //dont forget to add pilot_id on the route
     const newData = {
         aircraft_id : document.getElementById("aircraftIDSelect").value,
         date : document.getElementById("dateFlight").value,
@@ -11,8 +10,8 @@ document.getElementById("btnSave").addEventListener("click", async (event) => {
         departure_time: document.getElementById("departureTime").value,
         arrival_airport: document.getElementById("arrivalAirport").value,
         arrival_time: document.getElementById("arrivalTime").value,
-        approaches: parseINT(document.getElementById("approaches").value),
-        landings: parseINT(document.getElementById("landings").value),
+        approaches: document.getElementById("approaches").value,
+        landings: document.getElementById("landings").value,
         comments: document.getElementById("comments").value ,
         total_instrument_time: document.getElementById("instrumentTime").value,
         total_time : 2.5,
@@ -28,5 +27,10 @@ document.getElementById("btnSave").addEventListener("click", async (event) => {
       } else {
         alert("Failed to add new post");
       }
+});
+
+document.getElementById("btnCnl").addEventListener("click", async (event) => {
+    document.location.replace("/");
+  
 });
 

@@ -13,10 +13,19 @@ router.get("/dashboard", withAuth, async (req, res) => {
         pilot_id: req.session.user_id,
       },
     });
+    const usrData = await User.findAll({
+      where: {
+        id: req.session.user_id,
+      },
+      raw: true,
+    })
     const logs = logData.map((log) => log.get({ plain: true }));
+    //const usr = usrData.get({ plain: true })
+    console.log(usrData)
     res.render("dashboard", {
       logs,
       logged_in: req.session.logged_in,
+      usrData,
     });
     //res.status(200).json(logs);
   } catch (err) {
@@ -59,8 +68,6 @@ router.get("/logs/:id", withAuth, async (req, res) => {
       logData,
       logged_in: req.session.logged_in,
     });
-    // console.log("**** render edit screen")
-    // console.log(logData)
   } catch (err) {
     res.status(500).json(err);
   }
