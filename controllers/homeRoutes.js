@@ -65,9 +65,24 @@ router.get("/logs/:id", withAuth, async (req, res) => {
       ],
     });
     const logData = logDataID.get({ plain: true });
+    const aircraftData = await Aircraft.findAll();
+    const aircrafts = aircraftData.map((aircraft) =>
+      aircraft.get({ aircraft: true })
+    );
+
+    const aircraftz = aircrafts.map(aircraft => {
+        const aircraftobj = {...aircraft}
+        if (aircraft.id === logData.aircraft_id){
+          aircraftobj.selected=true;
+        }else{
+          aircraftobj.selected=false;
+        }
+        return aircraftobj;
+    })
     res.render("editData", {
       logData,
       logged_in: req.session.logged_in,
+      aircraftz,
     });
   } catch (err) {
     res.status(500).json(err);

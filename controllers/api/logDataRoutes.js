@@ -6,13 +6,8 @@ const calcTime = require("../../utils/time")
 // Create new LogData
 router.post("/", withAuth, async (req, res) => {
   try {
-    console.log (req.body.date)
-    console.log (req.body.departure_time)
-    console.log (req.body.arrival_time)
-    
     const time = calcTime(`${req.body.date}T${req.body.departure_time}:00`,`${req.body.date}T${req.body.arrival_time}:00`)
     const totTime = time.days*24 + time.hours + time.minutes/60
-    console.log("*****", totTime)
     const logData = await LogData.create({
       ...req.body,
       pilot_id: req.session.user_id,
@@ -26,13 +21,22 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 // Update a log by its 'id' value
-router.put("/:id", withAuth, async (req, res) => {
+router.put("/", withAuth, async (req, res) => {
   try {
-    const logData = await LogData.update(req.body, {
-      where: {
-        id: req.params.id,
+    console.log(req.body.post_id)
+    console.log(`${req.body.date}T${req.body.departure_time}:00`,`${req.body.date}T${req.body.arrival_time}:00`)
+    const time = calcTime(`${req.body.date}T${req.body.departure_time}`,`${req.body.date}T${req.body.arrival_time}`)
+    const totTime = time.days*24 + time.hours + time.minutes/60
+    console.log(totTime);
+    const logData = await LogData.update({
+      ...req.body,
+      total_time: totTime,
+    },
+      {where: {
+        id: req.body.post_id,
       },
-    });
+    }
+    );
     //handlebars route here for update
     res.status(200).json(logData);
   } catch (err) {

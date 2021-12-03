@@ -11,6 +11,7 @@
 
 <ul>
     <li>{{formatDate logData.date}}</li>
+    <li>{{logData.id}}</li>
     <li>{{logData.dual}}</li>
     <li>{{logData.instructor_name}}</li>
     <li>{{logData.departure_airport}}</li>
@@ -38,17 +39,10 @@
             </div>
           </div>
       </nav>
-
-  
         <section class="w-full lg:w-4/5">
-        
             <hr class="bg-gray-300 my-12">
-
-        
-
-   
             <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
-                <form>
+                <form id="editLog" data-post_id="{{logData.id}}">
                        <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4">
@@ -68,9 +62,12 @@
                         </div>
                         <div class="md:w-2/3">
                             <select name="" class="form-select block w-full focus:bg-white" id="aircraftIDSelect">
-                                <option value="Default">Default</option>
-                                {{#each aircrafts as |aircraft|}}
-                                <option value="{{aircraft.id}}">{{aircraft.reg_id}} - {{aircraft.aircraft_type}} - {{aircraft.aircraft_name}}</option>
+                                {{#each aircraftz as |aircraft|}}
+                                    {{#if aircraft.selected}}
+                                        <option value="{{aircraft.id}}" selected>{{aircraft.reg_id}} - {{aircraft.aircraft_type}} - {{aircraft.aircraft_name}}</option>
+                                    {{else}}
+                                        <option value="{{aircraft.id}}">{{aircraft.reg_id}} - {{aircraft.aircraft_type}} - {{aircraft.aircraft_name}}</option>
+                                    {{/if}}
                                 {{/each}}
                             </select>
 
@@ -241,8 +238,8 @@
 
 
                 <div class="pt-8 grid grid-cols-3 ">
-                    <button  id="btnSave" class="shadow bg-indigo-700 hover:bg-indigo-500 focus:shadow-outline focus:outline-none text-white font-bold py-2  rounded mr-4 text-4xl px-8 mx-8 m" type="button">
-                        Save
+                    <button  id="btnUpd" class="shadow bg-indigo-700 hover:bg-indigo-500 focus:shadow-outline focus:outline-none text-white font-bold py-2  rounded mr-4 text-4xl px-8 mx-8 m" type="button">
+                        Update
                     </button>
                     <button id="btnCnl" class="shadow bg-green-100 hover:bg-green-200 focus:shadow-outline focus:outline-none text-gray-700 font-bold py-2  rounded text-4xl px-8 mx-8" type="button">
                         Cancel
@@ -253,5 +250,5 @@
   
 
         </section>
-        <script src= "/javascript/addedit.js"></script>
+        <script src= "/javascript/edit.js"></script>
 </body>

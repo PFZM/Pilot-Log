@@ -1,7 +1,12 @@
-//save button pressed
-document.getElementById("btnSave").addEventListener("click", async (event) => {
+document.getElementById("btnCnl").addEventListener("click", async (event) => {
+    document.location.replace("/");
+  
+});
+
+document.getElementById("btnUpd").addEventListener("click", async (event) => {
     event.preventDefault();
     const newData = {
+        post_id : document.getElementById("editLog").getAttribute("data-post_id"),
         aircraft_id : document.getElementById("aircraftIDSelect").value,
         date : document.getElementById("dateFlight").value,
         dual:  document.getElementById("dualCheck").checked,
@@ -16,9 +21,9 @@ document.getElementById("btnSave").addEventListener("click", async (event) => {
         total_instrument_time: document.getElementById("instrumentTime").value,
         total_time : 2.5,
     }
-
-    const response = await fetch("/api/logData", {
-        method: "POST",
+    console.log(newData)
+    const response = await fetch('/api/logData/', {
+        method: "PUT",
         body: JSON.stringify(newData),
         headers: { "Content-Type": "application/json" },
       });
@@ -28,9 +33,3 @@ document.getElementById("btnSave").addEventListener("click", async (event) => {
         alert("Failed to add new post");
       }
 });
-
-document.getElementById("btnCnl").addEventListener("click", async (event) => {
-    document.location.replace("/");
-  
-});
-
