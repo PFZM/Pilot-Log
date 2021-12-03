@@ -1,5 +1,6 @@
 <div class="p-5 m-3 text-center text-3xl">
-  <h1 class=""><b>{{logs.1.user.first_name}} {{logs.1.user.last_name}}</h1>
+
+  <h1 class=""><b>{{usrData.0.first_name}} {{usrData.0.last_name}}</h1>
    <button id="logout" class="text-sm hover:underline float-right">Log Out</button>
 </div>
 <div>
@@ -7,7 +8,6 @@
    ✈️ Add New Flight
   </a>
 </div>
-
 
 
 
@@ -189,42 +189,26 @@
                 <td class="px-6 py-4">
                     {{log.comments}}
                 </td>
-                <td class="px-6 py-4">
-
-                <a href="#">
+                <td class="px-6 py-4 editBtn" data-id="{{log.id}}" >
 
                   <svg
-
                     xmlns="http://www.w3.org/2000/svg"
-
                     class="w-6 h-6 text-blue-400"
-
                     fill="none"
-
                     viewBox="0 0 24 24"
-
                     stroke="currentColor"
-
                   >
-
                     <path
-
                       stroke-linecap="round"
-
                       stroke-linejoin="round"
-
                       stroke-width="2"
-
                       d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-
                     />
 
                   </svg>
 
-                </a>
-
               </td>
-              <td class="px-6 py-4 delBtn">
+              <td class="px-6 py-4 delBtn" data-id="{{log.id}}">
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -233,7 +217,6 @@
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"

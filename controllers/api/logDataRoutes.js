@@ -1,31 +1,17 @@
 const router = require("express").Router();
 const { LogData, User } = require("../../models");
 const withAuth = require("../../utils/auth");
+const calcTime = require("../../utils/time")
 
 // Create new LogData
 router.post("/", withAuth, async (req, res) => {
-  //req.body looks like this
-  // {
-  //      "aircraft_id":"1", - From drop down list
-  //      "dual":"false", - check box
-  //      "instructor_name": "null", input box
-  //      "departure_airport": YSSY, input box
-  //      "departure_time":"08:00", formatted input box
-  //      "arrival_airport":"YMER"
-  //      "arrival_time":"11:30",
-  //      "approaches":"1",
-  //      "landings":"1",
-  //      "comments":"very noisy passengers"
-  //      "total_intrument_time": "1.5" - input box
-  //      "total_time" : "2.0" - input box
-  // }
-  //
-  //    pilot_id : req.session.user_id
-
   try {
+    const time = calcTime(`${req.body.date}T${req.body.departure_time}:00`,`${req.body.date}T${req.body.arrival_time}:00`)
+    const totTime = time.days*24 + time.hours + time.minutes/60
     const logData = await LogData.create({
       ...req.body,
-      //pilot_id: req.session.user_id,
+      pilot_id: req.session.user_id,
+      total_time: totTime,
     });
     res.status(200).json(logData);
   } catch (err) {
@@ -35,13 +21,23 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 // Update a log by its 'id' value
-router.put("/:id", withAuth, async (req, res) => {
+router.put("/", withAuth, async (req, res) => {
   try {
-    const logData = await LogData.update(req.body, {
-      where: {
-        id: req.params.id,
+    console.log(req.body.post_id)
+    console.log(`${req.body.date}T${req.body.departure_time}:00`,`${req.body.date}T${req.body.arrival_time}:00`)
+    const time = calcTime(`${req.body.date}T${req.body.departure_time}`,`${req.body.date}T${req.body.arrival_time}`)
+    const totTime = time.days*24 + time.hours + time.minutes/60
+    console.log(totTime);
+    const logData = await LogData.update({
+      ...req.body,
+      total_time: totTime,
+    },
+      {where: {
+        id: req.body.post_id,
       },
-    });
+    }
+    );
+    //handlebars route here for update
     res.status(200).json(logData);
   } catch (err) {
     console.error(err);

@@ -67,7 +67,7 @@ LogData.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    total_intrument_time: {
+    total_instrument_time: {
       type: DataTypes.REAL,
       allowNull: true,
     },

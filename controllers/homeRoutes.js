@@ -6,17 +6,27 @@ router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const logData = await LogData.findAll({
       include: [
-        { model: User, attributes: { exclude: ["password"] } },
+//        { model: User, attributes: { exclude: ["password"] } },
         { model: Aircraft },
       ],
       where: {
         pilot_id: req.session.user_id,
       },
     });
+    const usrData = await User.findAll({
+      where: {
+        id: req.session.user_id,
+      },
+      attributes: { exclude: ["password"] },
+      raw: true,
+    })
     const logs = logData.map((log) => log.get({ plain: true }));
+    //const usr = usrData.get({ plain: true })
+    console.log(usrData)
     res.render("dashboard", {
       logs,
       logged_in: req.session.logged_in,
+      usrData,
     });
     //res.status(200).json(logs);
   } catch (err) {
@@ -30,7 +40,7 @@ router.get("/addNew", withAuth, async (req, res) => {
     const aircrafts = aircraftData.map((aircraft) =>
       aircraft.get({ aircraft: true })
     );
-    res.render("logData", {
+    res.render("addNew", {
       aircrafts,
       logged_in: req.session.logged_in,
     });
@@ -41,7 +51,7 @@ router.get("/addNew", withAuth, async (req, res) => {
 });
 
 // Get LogData by specific ID
-router.get("/logData/:id", withAuth, async (req, res) => {
+router.get("/logs/:id", withAuth, async (req, res) => {
   try {
     const logDataID = await LogData.findByPk(req.params.id, {
       include: [
@@ -54,12 +64,25 @@ router.get("/logData/:id", withAuth, async (req, res) => {
         },
       ],
     });
-
     const logData = logDataID.get({ plain: true });
+    const aircraftData = await Aircraft.findAll();
+    const aircrafts = aircraftData.map((aircraft) =>
+      aircraft.get({ aircraft: true })
+    );
 
-    res.render("logData", {
-      ...logData,
+    const aircraftz = aircrafts.map(aircraft => {
+        const aircraftobj = {...aircraft}
+        if (aircraft.id === logData.aircraft_id){
+          aircraftobj.selected=true;
+        }else{
+          aircraftobj.selected=false;
+        }
+        return aircraftobj;
+    })
+    res.render("editData", {
+      logData,
       logged_in: req.session.logged_in,
+      aircraftz,
     });
   } catch (err) {
     res.status(500).json(err);

@@ -1,15 +1,23 @@
-//Delete button pressed
-// const delBtn = async (event) => {
-//     event.preventDefault();
-//     console.log(event.target)
-//   };
-
-//   document.getElementById('logTable').addEventListener('click',delBtn,false)
-
-document.getElementById("logTable").addEventListener("click", function (event) {
-  const target = event.target;
-  console.log("click triggered", target);
-  if (target.matches("td.delBtn *")) {
-    console.log("you deleted me");
+document.getElementById("logTable").addEventListener("click",  async (event) => {
+  event.preventDefault();
+  if (event.target.matches("td.delBtn *")) {
+    const target = event.target.closest("td.delBtn");
+    const log_id = target.getAttribute("data-id")
+    //console.log("you deleted me" , log_id, target );
+    const response = await fetch(`/api/logData/${log_id}`, {
+      method: "DELETE",
+    });
+  
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert("Failed to delete project");
+    }
+  }else if ((event.target.matches("td.editBtn *"))) {
+    const target = event.target.closest("td.editBtn");
+    const log_id = target.getAttribute("data-id")
+    console.log("you edited me" , log_id, target );
+    document.location.replace(`/logs/${log_id}`);
   }
 });
+
