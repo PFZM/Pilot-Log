@@ -30,7 +30,7 @@ router.get("/addNew", withAuth, async (req, res) => {
     const aircrafts = aircraftData.map((aircraft) =>
       aircraft.get({ aircraft: true })
     );
-    res.render("logData", {
+    res.render("addNew", {
       aircrafts,
       logged_in: req.session.logged_in,
     });

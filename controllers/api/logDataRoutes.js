@@ -1,13 +1,22 @@
 const router = require("express").Router();
 const { LogData, User } = require("../../models");
 const withAuth = require("../../utils/auth");
+const calcTime = require("../../utils/time")
 
 // Create new LogData
 router.post("/", withAuth, async (req, res) => {
   try {
+    console.log (req.body.date)
+    console.log (req.body.departure_time)
+    console.log (req.body.arrival_time)
+    
+    const time = calcTime(`${req.body.date}T${req.body.departure_time}:00`,`${req.body.date}T${req.body.arrival_time}:00`)
+    const totTime = time.days*24 + time.hours + time.minutes/60
+    console.log("*****", totTime)
     const logData = await LogData.create({
       ...req.body,
-      //pilot_id: req.session.user_id,
+      pilot_id: req.session.user_id,
+      total_time: totTime,
     });
     res.status(200).json(logData);
   } catch (err) {

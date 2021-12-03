@@ -18,15 +18,6 @@ document.getElementById("logTable").addEventListener("click",  async (event) => 
     const log_id = target.getAttribute("data-id")
     console.log("you edited me" , log_id, target );
     document.location.replace(`/logs/${log_id}`);
-    // const response = await fetch(`/logs/${log_id}`, {
-    //   method: "GET",
-    // });
-  
-    // if (response.ok) {
-    // } else {
-    //   console.log(response)
-    //   alert("Failed to render logData");
-    // }
   }
 });
 
