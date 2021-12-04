@@ -184,7 +184,11 @@
                 </td>
                 <td class="px-6 py-4">
                 <!--Dual-->
-                <input id="dualCheck" name="dualCheck" type="checkbox" class="">
+                {{#if log.dual}}
+                  <input id="dualCheck" name="dualCheck" type="checkbox" class="" checked>
+                {{else}}
+                  <input id="dualCheck" name="dualCheck" type="checkbox" class="" >
+                {{/if}}  
                 </td>
                 <td class="px-6 py-4">
                     {{log.comments}}
