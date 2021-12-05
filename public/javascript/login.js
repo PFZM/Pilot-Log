@@ -1,22 +1,28 @@
 const login = async (event) => {
-  event.preventDefault();
-  const email = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
+  try {
+    event.preventDefault();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-  if (email && password) {
+    if (!email || !password) {
+      alert("Please fill all the inputs.");
+      return;
+    }
     const reponse = await fetch("/api/users/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
-    if (reponse.ok) {
-      document.location.replace("/dashboard");
-    } else {
-      alert(response.statusText);
+    if (!reponse.ok) {
+      alert("Email and password doesn't match. Please check your details.");
+      document.getElementById("email").value = "";
+      document.getElementById("password").value = "";
+      return;
     }
+    document.location.replace("/dashboard");
+  } catch (err) {
+    console.error(err);
   }
 };
-
-
 
 document.getElementById("loginButton").addEventListener("click", login);

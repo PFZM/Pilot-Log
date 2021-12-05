@@ -7,11 +7,11 @@ const logout = async () => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      alert("Oops something went wrong, try again.");
+      return;
     }
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Error loging out" });
   }
 };
 
