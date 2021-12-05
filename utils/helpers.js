@@ -11,6 +11,12 @@ module.exports = {
   },
   formatDate2: (date) => {
     return format(date, 'yyyy-MM-dd')
+  },
+  fixNumber: (num) => {
+    return num.toFixed(1)
+  },
+  remSecond: (time) => {
+    return time.slice(0, -3)
   }
 }
 
