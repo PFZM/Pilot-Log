@@ -11,18 +11,17 @@
 Description of the proyect........
 
 Packages/libraries used for this application:  
-[Bcrypt](https://www.npmjs.com/package/bcrypt).  
-[Connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize).  
-[date-fns](https://date-fns.org/).  
-[dotenv](https://www.npmjs.com/package/dotenv).  
-[Express](https://www.npmjs.com/package/express).  
-[Express-handlebars](https://www.npmjs.com/search?q=express%20handlebars).  
-[Express-session](https://www.npmjs.com/package/express-session).  
-[MySQL2](https://www.npmjs.com/package/mysql2).  
-[Sequilize](https://sequelize.org/).  
-[tailwindcss](https://tailwindcss.com/).
-
-tailwindcss
+[Bcrypt](https://www.npmjs.com/package/bcrypt)  
+[Connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)  
+[date-fns](https://date-fns.org/)  
+[dotenv](https://www.npmjs.com/package/dotenv)  
+[Express](https://www.npmjs.com/package/express)  
+[Express-handlebars](https://www.npmjs.com/search?q=express%20handlebars)  
+[Express-session](https://www.npmjs.com/package/express-session)  
+[MySQL2](https://www.npmjs.com/package/mysql2)  
+[Nodemailer](https://nodemailer.com/about/)  
+[Sequilize](https://sequelize.org/)  
+[tailwindcss](https://tailwindcss.com/)
 
 ## Table of contents:
 

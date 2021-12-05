@@ -34,5 +34,14 @@
     "license": "Commercial",
     "license_number": "776749",
     "instrument_rating": true
+  },
+  {
+    "first_name": "Pilot",
+    "last_name": "Log",
+    "email": "pilotlogapp@outlook.com",
+    "password": "Password1234",
+    "license": "Commercial",
+    "license_number": "776750",
+    "instrument_rating": true
   }
 ]

@@ -26,13 +26,14 @@ const resetPassword = async (email, licenseNumber) => {
     });
     if (!response.ok) {
       alert("Email or license is not correct");
+      document.getElementById("user_email").value = "";
+      document.getElementById("license_number").value = "";
       return;
     }
-    alert("A new password has been sent to your email");
+    alert("A new password has been sent to your email.");
     document.location.replace("/");
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Error getting all the users" });
   }
 };
 

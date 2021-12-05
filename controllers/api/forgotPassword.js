@@ -2,8 +2,8 @@ const { User } = require("../../models");
 const router = require("express").Router();
 const transporter = require("../../config/connectionEmail");
 
-function newPassword(length = 20) {
-  const charset = "abcdefghijklmnopqrstuvwxyz";
+function newPassword(length = 12) {
+  const charset = "abcdefghijklmnopqrstuvwxyz123456789";
   let password = "";
   for (let index = 0; index < length; index++) {
     password += charset[Math.floor(Math.random() * charset.length)];
@@ -23,7 +23,7 @@ async function sendEmailpassword(email, password) {
             <p>Hello,</p>
             <p>A password reset was requested for this email address (${email}).
             If you requested this reset, your new password is: ${password}</p>
-            <p><a href="Link">Login with your new password!</a></p>
+            <p><a href="https://pilots-logbook.herokuapp.com/">Login with your new password!</a></p>
             </body>`, // html body
     });
 
