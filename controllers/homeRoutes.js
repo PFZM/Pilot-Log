@@ -20,6 +20,13 @@ router.get("/dashboard", withAuth, async (req, res) => {
       attributes: { exclude: ["password"] },
       raw: true,
     })
+    const totalTime = await LogData.sum('total_time',{
+      where: {
+        pilot_id: req.session.user_id,
+      },
+    });
+    console.log(totalTime);
+
     const logs = logData.map((log) => log.get({ plain: true }));
     //const usr = usrData.get({ plain: true })
     console.log(usrData)
@@ -27,6 +34,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       logs,
       logged_in: req.session.logged_in,
       usrData,
+      totalTime,
     });
     //res.status(200).json(logs);
   } catch (err) {
