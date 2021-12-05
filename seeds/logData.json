@@ -11,7 +11,7 @@
     "approaches": "2",
     "landings": 1,
     "comments": "Smooth Ride",
-    "total_intrument_time": 1.6,
+    "total_instrument_time": 1.6,
     "total_time": 2.3
   },
   {
@@ -25,7 +25,7 @@
     "arrival_time": "10:18:00",
     "landings": 1,
     "comments": "Bumpy",
-    "total_intrument_time": 0,
+    "total_instrument_time": 0,
     "total_time": 0.8
   },
   {
@@ -39,7 +39,8 @@
     "arrival_time": "12:00:00",
     "landings": 1,
     "comments": "Via East Sale",
-    "total_intrument_time": 0.5,
+    "total_instrument_time": 0.5,
+    "approaches": "2",
     "total_time": 0.9
   },
   {
@@ -53,7 +54,7 @@
     "arrival_time": "16:15:00",
     "landings": 2,
     "comments": "",
-    "total_intrument_time": 0,
+    "total_instrument_time": 0,
     "total_time": 2.0
   },
   {
@@ -67,7 +68,7 @@
     "arrival_time": "16:15:00",
     "landings": 2,
     "comments": "",
-    "total_intrument_time": 0,
+    "total_instrument_time": 0,
     "total_time": 2.0
   },
   {
@@ -81,7 +82,8 @@
     "arrival_time": "16:15:00",
     "landings": 2,
     "comments": "",
-    "total_intrument_time": 0,
+    "total_instrument_time": 1,
+    "approaches": "2",
     "total_time": 2.0
   }
 ]
