@@ -1,5 +1,6 @@
 const logout = async () => {
   try {
+    document.body.classList.add("waiting");
     const response = await fetch("api/users/logout", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },

@@ -1,13 +1,14 @@
 const init = async (event) => {
   try {
     event.preventDefault();
+    document.body.classList.add("waiting");
     const email = document.getElementById("user_email").value.trim();
     const licenseNumber = document
       .getElementById("license_number")
       .value.trim();
 
     if (!email || !licenseNumber) {
-      alert("Please enter all the details");
+      alert("Please enter all the details.");
     } else {
       const response = await resetPassword(email, licenseNumber);
     }
@@ -25,7 +26,7 @@ const resetPassword = async (email, licenseNumber) => {
       headers: { "Content-Type": "application/json" },
     });
     if (!response.ok) {
-      alert("Email or license is not correct");
+      alert("Email or license is not correct.");
       document.getElementById("user_email").value = "";
       document.getElementById("license_number").value = "";
       return;
