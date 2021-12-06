@@ -17,7 +17,6 @@ document.getElementById("btnSave").addEventListener("click", async (event) => {
     total_instrument_time: document.getElementById("instrumentTime").value || 0,
     total_time: 2.5,
   };
-
   const response = await fetch("/api/logData", {
     method: "POST",
     body: JSON.stringify(newData),
