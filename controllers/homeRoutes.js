@@ -6,12 +6,12 @@ router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const logData = await LogData.findAll({
       include: [
-//        { model: User, attributes: { exclude: ["password"] } },
         { model: Aircraft },
       ],
       where: {
         pilot_id: req.session.user_id,
       },
+      order: [['date', 'DESC']],
     });
     const usrData = await User.findAll({
       where: {
