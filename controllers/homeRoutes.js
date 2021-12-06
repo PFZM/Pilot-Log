@@ -25,11 +25,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
         pilot_id: req.session.user_id,
       },
     });
-    console.log(totalTime);
-
     const logs = logData.map((log) => log.get({ plain: true }));
-    //const usr = usrData.get({ plain: true })
-    console.log(usrData)
     res.render("dashboard", {
       logs,
       logged_in: req.session.logged_in,
