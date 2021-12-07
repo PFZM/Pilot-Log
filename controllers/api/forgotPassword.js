@@ -11,7 +11,7 @@ function newPassword(length = 12) {
   return password;
 }
 
-async function sendEmailpassword(email, password) {
+async function sendEmailpassword(email, password, res) {
   try {
     // send mail with defined transport object
     let info = await transporter.sendMail({
@@ -48,7 +48,7 @@ router.post("/forgot-password", async (req, res) => {
     const saved = await user.save();
 
     // send email to the user with new password
-    const sendEmail = await sendEmailpassword(user.email, password);
+    const sendEmail = await sendEmailpassword(user.email, password, res);
 
     res.status(200).json({ message: "Password updated" });
   } catch (err) {
