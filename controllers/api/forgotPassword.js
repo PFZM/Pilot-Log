@@ -35,7 +35,7 @@ async function sendEmailpassword(email, password, res) {
     return false;
   }
 }
-
+// forgot password 
 router.post("/forgot-password", async (req, res) => {
   try {
     const user = await User.findOne({
