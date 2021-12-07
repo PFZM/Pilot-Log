@@ -25,9 +25,11 @@ const resetPassword = async (email, licenseNumber) => {
       body: JSON.stringify({ email, licenseNumber }),
       headers: { "Content-Type": "application/json" },
     });
+    // added lines for debugging
     console.log(response)
     console.log(email)
     console.log(licenseNumber)
+    // end of add-in
     if (!response.ok) {
       alert("Email or license is not correct.");
       document.getElementById("user_email").value = "";
