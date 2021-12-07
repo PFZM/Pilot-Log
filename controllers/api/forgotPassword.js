@@ -28,9 +28,11 @@ async function sendEmailpassword(email, password, res) {
     });
 
     console.log("Message sent: %s", info.messageId);
+    return true;
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Error sending email" });
+
+    return false;
   }
 }
 
@@ -49,6 +51,11 @@ router.post("/forgot-password", async (req, res) => {
 
     // send email to the user with new password
     const sendEmail = await sendEmailpassword(user.email, password, res);
+
+    if (!sendEmail) {
+      res.status(500).json({ message: "Error sending email" });
+      return;
+    }
 
     res.status(200).json({ message: "Password updated" });
   } catch (err) {
